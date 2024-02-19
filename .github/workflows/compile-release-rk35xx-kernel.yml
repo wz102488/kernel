@@ -52,7 +52,7 @@ on:
         options:
           - -rk35xx-ophub
           - -happy-new-year
-          - -yourname
+          - -wz102488
       kernel_config:
         description: "Set the path of kernel .config"
         required: false
@@ -93,7 +93,7 @@ jobs:
           echo "status=success" >> ${GITHUB_OUTPUT}
 
       - name: Compile the kernel [ ${{ inputs.kernel_version }} ]
-        uses: ophub/amlogic-s9xxx-armbian@main
+        uses: wz102488/amlogic-s9xxx-armbian@main
         if: ${{ steps.init.outputs.status }} == 'success' && !cancelled()
         with:
           build_target: kernel
